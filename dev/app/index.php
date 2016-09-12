@@ -1,10 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
 	<meta charset="UTF-8">
-	<title>Index</title>
+	<title>Travelguitar from Russia - Laika.pro</title>
 </head>
 <body>
-	<h1>php</h1>
+	<header>
+	
+	</header>
+	
+	<section class="section-1">
+	
+	
+	</section>
+	
+	<section class="section-2">
+	
+	
+	</section>
+	
+	<section class="section-3">
+	
+	
+	</section>
+	
+	<section class="section-4">
+	
+	
+	</section>
+	
+	<section class="section-5">
+	
+	
+	</section>
+	
+	<footer>
+	
+	</footer>
+	
 </body>
 </html>
