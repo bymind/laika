@@ -7,6 +7,21 @@
 <body>
 	<header>
 	
+		<nav>
+			<ul>
+				<li><a href="">1 пункт</a></li>
+				<li><a href="">2 пункт</a></li>
+				<li><a href="">3 пункт</a></li>
+				<li><a href="">4 пункт</a></li>
+				<li><a href="">5 пункт</a></li>
+				<li><a href="">6 пункт</a></li>
+				<li><a href="">7 пункт</a></li>
+				<li><a href="">8 пункт</a></li>
+				<li><a href="">9 пункт</a></li>
+				<li><a href="">10 пункт</a></li>
+			</ul>
+		</nav>
+	
 	</header>
 	
 	<section class="section-1">
