@@ -14,7 +14,7 @@ class Route
 	static function start()
 	{
 		// default action
-		// $controller_name = 'Main';
+		//$controller_name = 'Main';
 		$controller_name = '';
 		$action_name = 'index';
 		$params = '';
@@ -23,30 +23,34 @@ class Route
 		$routes = explode('/', $_SERVER['REQUEST_URI']);
 
 		// первый кусок после домена - это наш контроллер
-		if ( !empty($routes[1]) )
+		if ( !empty($routes[1]) || ($routes[1]==NULL) )
 		{
 			if ($routes[1][0]=="?") {
 				
-			} else {
+			} else
+				if ($routes[1]==NULL) {
+					$controller_name = "Main";
+					$controller_name = Self::PrepareUrl($controller_name);
+			} else{
 				$controller_name = $routes[1];
 				$controller_name = Self::PrepareUrl($controller_name);
 			}
 		}
 
 		// второй кусок - это экшен
-		if ( !empty($routes[2]) )
+		if ( !empty($routes[2]) && !($routes[2]==NULL))
 		{
 			$action_name = $routes[2];
 			$action_name = Self::PrepareUrl($action_name);
 		}
 
-		if ( !empty($routes[3]) )
+		if ( !empty($routes[3]) && !($routes[2]==NULL))
 		{
 			$param= $routes[3];
 			$param = Self::PrepareUrl($param);
 		}
 
-		if ( !empty($routes[4]) )
+		if ( !empty($routes[4]) && !($routes[2]==NULL))
 		{
 			$params['name'] = $routes[3];
 			$params['name'] = Self::PrepareUrl($params['name']);
@@ -57,7 +61,7 @@ class Route
 		// префиксы для имен
 		$model_name = 'Model_'.$controller_name;
 		$article_name = $controller_name;
-		if ($controller_name == "") {
+		if (($controller_name == "")||(! $controller_name)) {
 			$controller_name = 'Main';
 		} else if ((strtolower($controller_name) == "main")&&(($action_name == "")||($action_name == "index"))) {
 			route::Catch_Error('404');
@@ -131,10 +135,10 @@ class Route
 								//}
 						}
 
-		} else {
-			/**
+		} /*else {
+		
 			пробуем подключить контроллер статей и показать статью
-			*/
+			
 			$controller_name = "articles";
 			$controller_name = "Controller_".$controller_name;
 			$controller_file = strtolower($controller_name).'.php';
@@ -143,8 +147,8 @@ class Route
 			$controller = new $controller_name;
 			$action = 'action_r301';
 			$controller->$action($article_name);
-		}
-		//else Route::Catch_Error('404');
+		}*/
+		else Route::Catch_Error('404');
 
 		/**
 		**
@@ -161,7 +165,7 @@ class Route
 
 	function Catch_Error($code = null)
 	{
-		// Route::Debug($controller_name, $action, $params);
+		Route::Debug($controller_name, $action, $params);
 		// создаем контроллер ошибки
 		$controller_error_name = 'controller_error_'.$code;
 		$controller_error_path = 'application/controllers/errors/'.$controller_error_name.'.php';
