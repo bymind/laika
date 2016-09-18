@@ -1,8 +1,5 @@
 <?php
 
-//TODO move session_start() to any controller
-session_start();
-
 // DB config
 
 //$dbHost='a103460.mysql.mchost.ru';
