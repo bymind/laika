@@ -8,5 +8,4 @@ Laika.pro
 Адреса
 ------
 Адреса страниц состоят из цифр, букв латинского алфавита и символа "-" (дефис).
-
--- *laika.pro/kak-poslat-vseh-nahui*
+**laika.pro/kak-poslat-vseh-nahui**
