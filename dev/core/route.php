@@ -12,10 +12,17 @@
 	* > создает экземпляры контролеров страниц и вызывает действия этих контроллеров.
 	*/
 
+	/**
+	*
+	*
+	*
+	*	Бум! коммент!
+	*/
+
 class Route
 {
 
-	static function start()
+	public static function start()
 	{
 		// default action
 		//$controller_name = 'Main';
