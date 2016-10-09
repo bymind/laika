@@ -24,29 +24,44 @@ class Route
 
 	public static function start()
 	{
+		session_start();
 		// default action
 		//$controller_name = 'Main';
-		$controller_name = '';
-		$action_name = 'index';
-		$params = '';
-		$param = '';
-		// дербаним url на куски
+		// $controller_name = '';
+		// $action_name = 'index';
+		// $params = '';
+		// $param = '';
+		
+		/**
+		*	дербаним url на куски
+		*/
 		$routes = explode('/', $_SERVER['REQUEST_URI']);
 
-		// первый кусок после домена - это наш контроллер
-		if ( !empty($routes[1]) || ($routes[1]==NULL) )
+		// if first part empty - go main page
+		if ($routes[1]==null)
 		{
-			if ($routes[1][0]=="?") {
-				
-			} else
-				if ($routes[1]==NULL) {
-					$controller_name = "Main";
-					$controller_name = Self::PrepareUrl($controller_name);
-			} else{
-				$controller_name = $routes[1];
-				$controller_name = Self::PrepareUrl($controller_name);
-			}
+			self::goMainPage();
 		}
+		else
+		{
+			self::pageMiner($routes);
+		}
+
+	}
+
+	/**
+	*	pageMiner()
+	*	собираем страницу
+	* @param $routes
+	*/
+	public function pageMiner($routes)
+	{
+		if (strtolower($routes[1])=='main') {
+			self::Catch_Error('404');
+		}
+		
+		$controller_name = $routes[1];
+		$controller_name = Self::PrepareUrl($controller_name);
 
 		// второй кусок - это экшен
 		if ( !empty($routes[2]) && !($routes[2]==NULL))
@@ -55,12 +70,14 @@ class Route
 			$action_name = Self::PrepareUrl($action_name);
 		}
 
+		// третий кусок - это параметр
 		if ( !empty($routes[3]) && !($routes[2]==NULL))
 		{
 			$param= $routes[3];
 			$param = Self::PrepareUrl($param);
 		}
 
+		// четвертый кусок - это значение параметра
 		if ( !empty($routes[4]) && !($routes[2]==NULL))
 		{
 			$params['name'] = $routes[3];
@@ -71,14 +88,8 @@ class Route
 
 		// префиксы для имен
 		$model_name = 'Model_'.$controller_name;
-		$article_name = $controller_name;
-		if (($controller_name == "")||(! $controller_name)) {
-			$controller_name = 'Main';
-		} else if ((strtolower($controller_name) == "main")&&(($action_name == "")||($action_name == "index"))) {
-			route::Catch_Error('404');
-		}
 		$controller_name = 'Controller_'.$controller_name;
-		$action_param = $action_name;
+		// $action_param = $action_name;
 		$action_name = 'action_'.$action_name;
 
 		// врубаем модель, если есть
@@ -97,19 +108,19 @@ class Route
 		// проверим, не в админку ли хотят
 		if ($controller_name == "Controller_admin") {
 		// если да - лезем в папку
-			$controller_path = 'application/controllers/admin/'.$controller_file;
+			$controller_path = 'app/controllers/admin/'.$controller_file;
 		} else {
 		// если нет - ищем в общей папке
-			$controller_path = 'application/controllers/'.$controller_file;
+			$controller_path = 'app/controllers/'.$controller_file;
 		}
 		if ( file_exists($controller_path) )
 		{
 			include $controller_path;
 
 			// создаем экземпляр класса контроллера
-			$controller = new $controller_name; // Controller_Main
+			$controller = new $controller_name;
 			// создадим-ка еще одну переменную для имени экшена, старая переменная может нам еще пригодиться
-			$action = $action_name; // action_index
+			$action = $action_name;
 
 			// проверяем наличие такого экшена в контроллере
 			if ( (isset($params['target'])) && ($params['target']!=="") && ($controller_name=="Controller_admin"))
@@ -121,52 +132,48 @@ class Route
 					{
 						// нашли - ебашим
 						if ($param==='') {
-									// if ($controller_name=="Controller_admin") Route::Debug($controller_name, $action, $param);
-						$controller->$action();
+							$controller->$action();
 						} else {
-						$controller->$action($param);
+							$controller->$action($param);
 						}
 					} else
 						{ // если не нашли экшен и нет параметра, пробуем пропихнуть в основной экшен с параметром, равном имени экшена
-							// if ($controller_name == "Controller_articles") {
-								// если статьи - то без экшена, сразу параметр - урл статьи
 								if ($param == "") {
 									$param = $action_param;
 									$action = 'action_index';
-									// Route::Debug($controller_name, $action, $param);
 									$controller->$action($param);
-								} else {
-									// Route::Debug($controller_name, $action, $param);
-									Self::Catch_Error('404'); // не статьи - значит 404
 								}
-							// } else
-								//{
-									// Self::Catch_Error('404'); // не статьи - значит 404
-									// Route::Debug($controller_name, $action, $params);
-								//}
 						}
-
-		} /*else {
-		
-			пробуем подключить контроллер статей и показать статью
-			
-			$controller_name = "articles";
-			$controller_name = "Controller_".$controller_name;
-			$controller_file = strtolower($controller_name).'.php';
-			$controller_path = 'application/controllers/'.$controller_file;
-			include $controller_path;
-			$controller = new $controller_name;
-			$action = 'action_r301';
-			$controller->$action($article_name);
-		}*/
-		else Route::Catch_Error('404');
-
-		/**
-		**
-		 тип отладка - функция Debug *
-		*/
+		}
+		else {
+			self::Debug($controller_name, $action, $params);
+			self::Catch_Error('404');
+		}
 	}
 
+	/**
+	*	goMainPage()
+	*	Подрубаем главную страницу
+	*/
+	public function goMainPage()
+	{
+		$controller_name = "Controller_main";
+		$controller_file = strtolower($controller_name).'.php';
+		$controller_path = 'app/controllers/'.$controller_file;
+		
+		include $controller_path;
+		
+		$controller = new $controller_name;
+		
+		$action = "action_index";
+		$controller->$action();
+	}
+
+
+	/**
+	*	PrepareUrl()
+	*	Экранируем url
+	*/
 	function PrepareUrl($u)
 	{
 		$u = addslashes(urldecode($u));
@@ -174,12 +181,17 @@ class Route
 		return $u;
 	}
 
+
+	/**
+	*	Catch_Error($code)
+	*	Показываем страницу ошибки
+	*	@param $code
+	*/
 	function Catch_Error($code = null)
 	{
-		Route::Debug($controller_name, $action, $params);
 		// создаем контроллер ошибки
 		$controller_error_name = 'controller_error_'.$code;
-		$controller_error_path = 'application/controllers/errors/'.$controller_error_name.'.php';
+		$controller_error_path = 'app/controllers/errors/'.$controller_error_name.'.php';
 		include $controller_error_path;
 
 		$error_controller = new $controller_error_name;
@@ -187,7 +199,7 @@ class Route
 		$error_code = $code;
 
 		$error_controller->$error_action($error_code);
-
+		exit();
 	}
 
 	function Catch_301_Redirect($to = "")
@@ -195,65 +207,6 @@ class Route
 		header('HTTP/1.1 301 Moved Permanently');
 		header('Location: http://'.$_SERVER['HTTP_HOST'].$to);
 		exit();
-	}
-
-	/**
-	* TODO тащить список редиректов из базы через какую-нибудь модель
-	* РАСШИРЯЕМОСТЬ БЛЕАТЬ!
-	*/
-
-	function RedirectList($path)
-	{
-		$rList = array(
-			'/category/articles/' => '/articles',
-			'/category/articles' => '/articles',
-			'/home/статьи/' => '/articles',
-			'/home/статьи' => '/articles',
-			'/статьи/' => '/articles',
-			'/статьи' => '/articles',
-			'/upgrade_apple_macbook_pro/' => '/prices/upgrade',
-			'/upgrade_apple_macbook_pro' => '/prices/upgrade',
-			'/remont_apple/macbook_pro/' => '/prices/repair#mac',
-			'/remont_apple/macbook_pro' => '/prices/repair#mac',
-			'/remont_apple/macbook-air/' => '/prices/repair#mac',
-			'/remont_apple/macbook-air' => '/prices/repair#mac',
-			'/remont_apple/imac/' => '/prices/repair#mac',
-			'/remont_apple/imac' => '/prices/repair#mac',
-			'/remont_apple/macmini-2/' => '/prices/repair#mac',
-			'/remont_apple/macmini-2' => '/prices/repair#mac',
-			'/remont_apple/macpro-2/' => '/prices/repair#mac',
-			'/remont_apple/macpro-2' => '/prices/repair#mac',
-			'/remont_apple/macbookair/' => '/prices/repair#mac',
-			'/remont_apple/macbookair' => '/prices/repair#mac',
-			'/remont_apple/macbookpro/' => '/prices/repair#mac',
-			'/remont_apple/macbookpro' => '/prices/repair#mac',
-			'/remont_apple/ipadiphone-2/' => '/prices/repair/#iphone',
-			'/remont_apple/ipadiphone-2' => '/prices/repair/#iphone',
-			'/remont_apple/ipadiphone/' => '/prices/repair/#iphone',
-			'/remont_apple/ipadiphone' => '/prices/repair/#iphone',
-			'/remont_apple/monitor/' => '/prices/repair/#displays',
-			'/remont_apple/monitor' => '/prices/repair/#displays',
-			'/category/repairing' => '/prices/repair',
-			'/category/repairing/' => '/prices/repair',
-			'/category/stock/' => '/promo',
-			'/category/stock' => '/promo',
-			'/remont_apple/monitor-2/' => '/prices/repair#displays',
-			'/remont_apple/monitor-2' => '/prices/repair#displays',
-			'/remont_apple/hdd_repair/' => '/prices/repair#restore',
-			'/remont_apple/hdd_repair' => '/prices/repair#restore',
-			'/vizov_mastera/' => '/#master',
-			'/vizov_mastera' => '/#master',
-			'/vyzov_curiera/' => '/#curier',
-			'/vyzov_curiera' => '/#curier',
-		);
-
-		$path = urldecode($path);
-
-		if (array_key_exists($path, $rList)) {
-			Self::Catch_301_Redirect($rList[$path]);
-		}
-		else {
-		}
 	}
 
 	function Debug($controller, $action, $params)
