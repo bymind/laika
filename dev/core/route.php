@@ -22,15 +22,23 @@
 class Route
 {
 
+	/**
+	* loadClass()
+	* Loading class
+	* @param $class
+	*/
+	public function loadClass($class)
+	{
+		$class_file = strtolower($class).'.php';
+		$class_path = 'app/controllers/'.$class_file;
+		
+		include $class_path;
+	}
+
+
 	public static function start()
 	{
 		session_start();
-		// default action
-		//$controller_name = 'Main';
-		// $controller_name = '';
-		// $action_name = 'index';
-		// $params = '';
-		// $param = '';
 		
 		/**
 		*	дербаним url на куски
@@ -49,9 +57,10 @@ class Route
 
 	}
 
+
 	/**
-	*	pageMiner()
-	*	собираем страницу
+	* pageMiner()
+	* собираем страницу
 	* @param $routes
 	*/
 	public function pageMiner($routes)
@@ -89,7 +98,6 @@ class Route
 		// префиксы для имен
 		$model_name = 'Model_'.$controller_name;
 		$controller_name = 'Controller_'.$controller_name;
-		// $action_param = $action_name;
 		$action_name = 'action_'.$action_name;
 
 		// врубаем модель, если есть
@@ -115,8 +123,8 @@ class Route
 		}
 		if ( file_exists($controller_path) )
 		{
-			include $controller_path;
-
+			self::loadClass($controller_name);
+			
 			// создаем экземпляр класса контроллера
 			$controller = new $controller_name;
 			// создадим-ка еще одну переменную для имени экшена, старая переменная может нам еще пригодиться
@@ -158,11 +166,8 @@ class Route
 	public function goMainPage()
 	{
 		$controller_name = "Controller_main";
-		$controller_file = strtolower($controller_name).'.php';
-		$controller_path = 'app/controllers/'.$controller_file;
 		
-		include $controller_path;
-		
+		self::loadClass($controller_name);
 		$controller = new $controller_name;
 		
 		$action = "action_index";
@@ -177,7 +182,6 @@ class Route
 	function PrepareUrl($u)
 	{
 		$u = addslashes(urldecode($u));
-		//echo $u.'<br>';
 		return $u;
 	}
 
@@ -191,9 +195,8 @@ class Route
 	{
 		// создаем контроллер ошибки
 		$controller_error_name = 'controller_error_'.$code;
-		$controller_error_path = 'app/controllers/errors/'.$controller_error_name.'.php';
-		include $controller_error_path;
 
+		self::loadClass($controller_error_name);
 		$error_controller = new $controller_error_name;
 		$error_action = 'action_index';
 		$error_code = $code;
