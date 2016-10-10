@@ -21,6 +21,10 @@
 
 class Route
 {
+	/**
+	* Адрес папки с контроллерами
+	*/
+	const CONTROLLERS_PATH = "app/controllers/";
 
 	/**
 	* loadClass()
@@ -30,7 +34,7 @@ class Route
 	public function loadClass($class)
 	{
 		$class_file = strtolower($class).'.php';
-		$class_path = 'app/controllers/'.$class_file;
+		$class_path = self::CONTROLLERS_PATH.$class_file;
 		
 		include $class_path;
 	}
@@ -102,7 +106,7 @@ class Route
 
 		// врубаем модель, если есть
 		$model_file = strtolower($model_name).'.php';
-		$model_path = 'application/models/'.$article_name.'/'.$model_file;
+		$model_path = 'app/models/'.$article_name.'/'.$model_file;
 		if ( file_exists($model_path) )
 		{
 			include $model_path;
@@ -116,10 +120,10 @@ class Route
 		// проверим, не в админку ли хотят
 		if ($controller_name == "Controller_admin") {
 		// если да - лезем в папку
-			$controller_path = 'app/controllers/admin/'.$controller_file;
+			$controller_path = self::CONTROLLERS_PATH.'admin/'.$controller_file;
 		} else {
 		// если нет - ищем в общей папке
-			$controller_path = 'app/controllers/'.$controller_file;
+			$controller_path = self::CONTROLLERS_PATH.$controller_file;
 		}
 		if ( file_exists($controller_path) )
 		{
