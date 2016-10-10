@@ -22,16 +22,20 @@
 class Route
 {
 	/**
-	* Адрес папки с контроллерами
+	* Константы 
 	*/
+
+	// Адрес папки с контроллерами
 	const CONTROLLERS_PATH = "app/controllers/";
 
+
 	/**
-	* loadClass()
+	* loadController()
 	* Loading class
 	* @param $class
 	*/
-	public function loadClass($class)
+
+	public function loadController($class)
 	{
 		$class_file = strtolower($class).'.php';
 		$class_path = self::CONTROLLERS_PATH.$class_file;
@@ -39,6 +43,13 @@ class Route
 		include $class_path;
 	}
 
+
+	/**
+	* start()
+	*
+	* Starting routing.
+	*
+	*/
 
 	public static function start()
 	{
@@ -54,7 +65,7 @@ class Route
 		{
 			self::goMainPage();
 		}
-		else
+		else // else - go mining page
 		{
 			self::pageMiner($routes);
 		}
@@ -64,9 +75,12 @@ class Route
 
 	/**
 	* pageMiner()
+	*
 	* собираем страницу
+	*
 	* @param $routes
 	*/
+
 	public function pageMiner($routes)
 	{
 		if (strtolower($routes[1])=='main') {
@@ -95,8 +109,8 @@ class Route
 		{
 			$params['name'] = $routes[3];
 			$params['name'] = Self::PrepareUrl($params['name']);
-			$params['target'] = $routes[4];
-			$params['target'] = Self::PrepareUrl($params['target']);
+			$params['value'] = $routes[4];
+			$params['value'] = Self::PrepareUrl($params['value']);
 		}
 
 		// префиксы для имен
@@ -116,18 +130,19 @@ class Route
 		// плюс ищем и выполняем экшен, если он есть
 		// если что-то не нашли - ебашим 404
 
-		$controller_file = strtolower($controller_name).'.php';
-		// проверим, не в админку ли хотят
+		/*// проверим, не в админку ли хотят
 		if ($controller_name == "Controller_admin") {
 		// если да - лезем в папку
-			$controller_path = self::CONTROLLERS_PATH.'admin/'.$controller_file;
+			self::loadController("admin/".$controller_name);
+			// $controller_path = self::CONTROLLERS_PATH.'admin/'.$controller_file;
 		} else {
 		// если нет - ищем в общей папке
-			$controller_path = self::CONTROLLERS_PATH.$controller_file;
-		}
+		}*/
+		
+		
 		if ( file_exists($controller_path) )
 		{
-			self::loadClass($controller_name);
+			self::loadController($controller_name);
 			
 			// создаем экземпляр класса контроллера
 			$controller = new $controller_name;
@@ -135,7 +150,7 @@ class Route
 			$action = $action_name;
 
 			// проверяем наличие такого экшена в контроллере
-			if ( (isset($params['target'])) && ($params['target']!=="") && ($controller_name=="Controller_admin"))
+			if ( (isset($params['value'])) && ($params['value']!=="") && ($controller_name=="Controller_admin"))
 				{ // если админка
 					// Route::Debug($controller_name, $action, $params);
 					$controller->$action($params);
@@ -158,20 +173,23 @@ class Route
 						}
 		}
 		else {
-			self::Debug($controller_name, $action, $params);
+			// self::Debug($controller_name, $action, $params);
 			self::Catch_Error('404');
 		}
 	}
 
+
 	/**
-	*	goMainPage()
-	*	Подрубаем главную страницу
+	* goMainPage()
+	*
+	* Подрубаем главную страницу
 	*/
+
 	public function goMainPage()
 	{
 		$controller_name = "Controller_main";
 		
-		self::loadClass($controller_name);
+		self::loadController($controller_name);
 		$controller = new $controller_name;
 		
 		$action = "action_index";
@@ -181,8 +199,10 @@ class Route
 
 	/**
 	*	PrepareUrl()
+	*
 	*	Экранируем url
 	*/
+
 	function PrepareUrl($u)
 	{
 		$u = addslashes(urldecode($u));
@@ -192,15 +212,18 @@ class Route
 
 	/**
 	*	Catch_Error($code)
+	*
 	*	Показываем страницу ошибки
+	*
 	*	@param $code
 	*/
+
 	function Catch_Error($code = null)
 	{
 		// создаем контроллер ошибки
 		$controller_error_name = 'controller_error_'.$code;
 
-		self::loadClass($controller_error_name);
+		self::loadController($controller_error_name);
 		$error_controller = new $controller_error_name;
 		$error_action = 'action_index';
 		$error_code = $code;
@@ -209,12 +232,30 @@ class Route
 		exit();
 	}
 
+
+	/**
+	*	Catch_301_Redirect($to)
+	*
+	*	Обработка 301-редиректа
+	*
+	*	@param $to
+	*/
+
 	function Catch_301_Redirect($to = "")
 	{
 		header('HTTP/1.1 301 Moved Permanently');
 		header('Location: http://'.$_SERVER['HTTP_HOST'].$to);
 		exit();
 	}
+
+
+	/**
+	*	Debug($controller, $action, $params)
+	*
+	* Выводит имена контроллера, экшена и параметров
+	*
+	*	@param $controller, $action, $params
+	*/
 
 	function Debug($controller, $action, $params)
 	{
@@ -230,4 +271,5 @@ class Route
 		var_dump($params);
 		echo '<br>';
 	}
+
 }
