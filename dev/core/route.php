@@ -27,6 +27,9 @@ class Route
 
 	// Адрес папки с контроллерами
 	const CONTROLLERS_PATH = "app/controllers/";
+	
+	// Адрес папки с моделями
+	const MODELS_PATH = "app/models/";
 
 
 	/**
@@ -34,8 +37,7 @@ class Route
 	* Loading class
 	* @param $class
 	*/
-
-	public function loadController($class)
+	private function loadController($class)
 	{
 		$class_file = strtolower($class).'.php';
 		$class_path = self::CONTROLLERS_PATH.$class_file;
@@ -45,12 +47,26 @@ class Route
 
 
 	/**
-	* start()
-	*
-	* Starting routing.
-	*
+	* loadModel()
+	* Loading model
+	* @param $model
 	*/
+	private function loadModel($model)
+	{
+		$model_file = strtolower($model).'.php';
+		$model_path = self::MODELS_PATH.$model_file;
 
+		if ( file_exists($model_path) )
+		{
+			include $model_path;
+		}
+
+	}
+
+	/**
+	* start()
+	* Starting routing.
+	*/
 	public static function start()
 	{
 		session_start();
@@ -69,18 +85,14 @@ class Route
 		{
 			self::pageMiner($routes);
 		}
-
 	}
 
 
 	/**
 	* pageMiner()
-	*
 	* собираем страницу
-	*
 	* @param $routes
 	*/
-
 	public function pageMiner($routes)
 	{
 		if (strtolower($routes[1])=='main') {
@@ -98,14 +110,14 @@ class Route
 		}
 
 		// третий кусок - это параметр
-		if ( !empty($routes[3]) && !($routes[2]==NULL))
+		if ( !empty($routes[3]) && !($routes[3]==NULL))
 		{
 			$param= $routes[3];
 			$param = Self::PrepareUrl($param);
 		}
 
 		// четвертый кусок - это значение параметра
-		if ( !empty($routes[4]) && !($routes[2]==NULL))
+		if ( !empty($routes[4]) && !($routes[4]==NULL))
 		{
 			$params['name'] = $routes[3];
 			$params['name'] = Self::PrepareUrl($params['name']);
@@ -119,42 +131,22 @@ class Route
 		$action_name = 'action_'.$action_name;
 
 		// врубаем модель, если есть
-		$model_file = strtolower($model_name).'.php';
-		$model_path = 'app/models/'.$article_name.'/'.$model_file;
-		if ( file_exists($model_path) )
-		{
-			include $model_path;
-		}
+		self::loadModel($model_name);
+		// TODO: перенести подключение модели в контроллер
 
 		// та же херня с контроллером
 		// плюс ищем и выполняем экшен, если он есть
 		// если что-то не нашли - ебашим 404
 
-		/*// проверим, не в админку ли хотят
-		if ($controller_name == "Controller_admin") {
-		// если да - лезем в папку
-			self::loadController("admin/".$controller_name);
-			// $controller_path = self::CONTROLLERS_PATH.'admin/'.$controller_file;
-		} else {
-		// если нет - ищем в общей папке
-		}*/
-		
-		
 		if ( file_exists($controller_path) )
 		{
 			self::loadController($controller_name);
-			
 			// создаем экземпляр класса контроллера
 			$controller = new $controller_name;
 			// создадим-ка еще одну переменную для имени экшена, старая переменная может нам еще пригодиться
 			$action = $action_name;
 
 			// проверяем наличие такого экшена в контроллере
-			if ( (isset($params['value'])) && ($params['value']!=="") && ($controller_name=="Controller_admin"))
-				{ // если админка
-					// Route::Debug($controller_name, $action, $params);
-					$controller->$action($params);
-				} else
 			 if (method_exists($controller, $action))
 					{
 						// нашли - ебашим
@@ -181,10 +173,8 @@ class Route
 
 	/**
 	* goMainPage()
-	*
 	* Подрубаем главную страницу
 	*/
-
 	public function goMainPage()
 	{
 		$controller_name = "Controller_main";
@@ -199,10 +189,8 @@ class Route
 
 	/**
 	*	PrepareUrl()
-	*
 	*	Экранируем url
 	*/
-
 	function PrepareUrl($u)
 	{
 		$u = addslashes(urldecode($u));
@@ -212,12 +200,9 @@ class Route
 
 	/**
 	*	Catch_Error($code)
-	*
 	*	Показываем страницу ошибки
-	*
 	*	@param $code
 	*/
-
 	function Catch_Error($code = null)
 	{
 		// создаем контроллер ошибки
@@ -235,12 +220,9 @@ class Route
 
 	/**
 	*	Catch_301_Redirect($to)
-	*
 	*	Обработка 301-редиректа
-	*
 	*	@param $to
 	*/
-
 	function Catch_301_Redirect($to = "")
 	{
 		header('HTTP/1.1 301 Moved Permanently');
@@ -251,12 +233,9 @@ class Route
 
 	/**
 	*	Debug($controller, $action, $params)
-	*
 	* Выводит имена контроллера, экшена и параметров
-	*
 	*	@param $controller, $action, $params
 	*/
-
 	function Debug($controller, $action, $params)
 	{
 		// тип отладка
