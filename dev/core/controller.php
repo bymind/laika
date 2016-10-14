@@ -24,7 +24,25 @@ class Controller
 		$this->is_logged();
 		$this->view = new View();
 		$this->model = new Model();
+	}
 
+	/**
+	* is_logged
+	* 
+	* проверяет, залогинен ли посетитель
+	* 
+	* @return bool
+	*/
+
+	function is_logged()
+	{
+		if (isset($_SESSION['id']))
+		{
+			return true;
+		} else
+		{
+			return false;
+		}
 	}
 
 	/**
