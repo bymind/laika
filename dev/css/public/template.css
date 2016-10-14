@@ -1,0 +1,116 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+/* PRIMARY */
+
+html, body {
+	position: relative;
+	display: block;
+	min-height: 100%;
+	font-size: 14px;
+}
+
+body {
+	background-color: #fff;
+	font-family: Open Sans, sans-serif;
+}
+
+/* NAVIGATION */
+
+nav {
+	color: #fff;
+	position: relative;
+	width: 100%;
+	max-width: 1180px;
+	height: 100px;
+	line-height: 100px;
+	z-index: 10;
+	margin: 0 auto;
+}
+
+.main_menu ul, .main_menu ul li {
+	display: inline-block;
+}
+
+.main_menu ul.menu_text_units li {
+	margin-right: 30px;
+}
+
+.main_menu ul.menu_ui_units li {
+	margin-right: 20px;
+	vertical-align: middle;
+}
+
+.main_menu ul.menu_ui_units li a {
+	opacity: .2;
+}
+
+.main_menu ul.menu_ui_units li a.active {
+	opacity: 1;
+}
+
+.main_menu ul.menu_ui_units li a.facebook, .main_menu ul.menu_ui_units li a.instagram{
+	width: 20px;
+	height: 20px;
+	padding: 10px 0;
+	box-sizing: content-box;
+	will-change: transform;
+	transition: transform .2s ease;
+}
+
+.main_menu ul.menu_ui_units li a.facebook:hover, .main_menu ul.menu_ui_units li a.instagram:hover {
+	text-decoration: none;
+	transform: scale(1.1, 1.1);
+}
+
+.main_menu ul.menu_ui_units li a.facebook{
+	background: url(/img/facebook.svg) center center no-repeat;
+	background-size: 20px 20px;
+}
+
+.main_menu ul.menu_ui_units li a.instagram{
+	background: url(/img/instagram.svg) center center no-repeat;
+	background-size: 20px 20px;
+}
+
+.main_menu ul.menu_ui_units li:nth-child(2n) {
+	margin-right: 40px;
+}
+
+.main_menu ul li:last-of-type{
+	margin-right: 0;
+}
+
+.main_menu ul.menu_text_units{
+	float: left;
+}
+
+.main_menu ul.menu_ui_units{
+	float: right;
+}
+
+.main_menu ul.menu_text_units li a, .main_menu ul.menu_ui_units li a {
+	color: inherit;
+	font-weight: 700;
+	text-decoration: none;
+	text-transform: uppercase;
+	display: block;
+	line-height: 20px;
+	border-bottom: 1px solid rgba(255,255,255,0);
+	will-change: border-bottom;
+	transition: border-bottom .15s ease-in-out;
+}
+
+.main_menu ul.menu_text_units li a:hover {
+	border-bottom: 1px solid #fff;
+}
+
+/* CONTENT */
+
+#content {
+	z-index: 1;
+	margin-top: -100px;
+}
