@@ -18,7 +18,7 @@ class Controller_Main extends Controller
 			array(
 					'title'=> $pageDataController['title'],
 					'style'=>'public/template.css',
-					'style_content'=>'public/main.css',
+					'style_content'=>'public/main_page.css',
 					'active_menu' => 'menu-item-1',
 					'pageId' => 'main',
 					'pageDataView' => $pageDataController
