@@ -1,15 +1,15 @@
 <nav class="main_menu">
 	<ul class="menu_text_units">
-		<li><a href="">About</a></li>
-		<li><a href="">News</a></li>
-		<li><a href="">Shipping and payment</a></li>
-		<li><a href="">Contacts</a></li>
+		<li><a href="/#">About</a></li>
+		<li><a href="/#">News</a></li>
+		<li><a href="/#">Shipping and payment</a></li>
+		<li><a href="/#">Contacts</a></li>
 	</ul>
 	
-	<ul class="manu_ui_units">
-		<li><a href="">En</a></li>
-		<li><a href="">Rus</a></li>
-		<li><a href="">Fb</a></li>
-		<li><a href="">Inst</a></li>
+	<ul class="menu_ui_units">
+		<li><a href="/#eng" title="English" class="active">En</a></li>
+		<li><a href="/#ru" title="Русский">Rus</a></li>
+		<li><a title="Facebook" href="https://www.fb.com/LaikaProGuitar" target="_blank" class="facebook active"></a></li>
+		<li><a title="Instagram" href="https://www.instagram.com/russiantravelguitar/" target="_blank" class="instagram active"></a></li>
 	</ul>
 </nav>
