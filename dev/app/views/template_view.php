@@ -27,12 +27,14 @@
 	<!-- <meta name="twitter:creator" content="russiantravelguitar"> -->
 	<!-- <meta name="twitter:image:src" content="<?php echo 'http://'.$_SERVER['HTTP_HOST'].$OgImage; ?>"> -->
 	<!-- <meta name="twitter:domain" content="laika.pro"> -->
-	
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&amp;subset=cyrillic" rel="stylesheet">
+	<link href="/css/<?php echo $style; ?>" rel="stylesheet">
+	<link href="/css/<?php echo $style_content; ?>" rel="stylesheet">
 	
 	<?php 
 		echo "<style>";
-		include "css/public/bootstrap.min.css";
-		include "css/public/dest.css";
+		// include "css/public/bootstrap.min.css";
+		include "css/public/prod.css";
 		echo "</style>";
 	 ?>
 </head>
@@ -63,7 +65,7 @@
 		echo "</style>";
 	*/ ?>
 
-<script src="/js/jquery.min.js"></script>
+<!-- <script src="/js/jquery.min.js"></script> -->
 
 </body>
 </html>
