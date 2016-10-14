@@ -8,16 +8,19 @@ class Model_Main extends Model
 	* @param $pageName
 	* @return $data
 	*/
+
+	public $pageDataModel;
+
 	public function getData($pageName)
 	{
 		switch ($pageName) {
 			case 'main_page':
-				$data['text'] = "Main page - Welcome! Hello from Model_Main =)";
+				$pageDataModel['text'] = "Main page - Welcome! Hello from Model_Main =)";
 				break;
 			default:
-				$data['text'] = "Any page text";
+				$pageDataModel['text'] = "Any page text";
 				break;
 		}
-		return $data;
+		return $pageDataModel;
 	}
 }
