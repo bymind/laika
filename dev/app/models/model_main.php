@@ -16,6 +16,7 @@ class Model_Main extends Model
 		switch ($pageName) {
 			case 'main_page':
 				$pageDataModel['text'] = "Main page - Welcome! Hello from Model_Main =)";
+				$pageDataModel['title'] = "Crafted travel guitar. Worldwide shipping.";
 				break;
 			default:
 				$pageDataModel['text'] = "Any page text";
