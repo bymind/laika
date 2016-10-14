@@ -30,7 +30,7 @@ class View
 	{
 
 		$OgType = 'website';
-		$OgImage = '/img/public/macfix-og.png';
+		$OgImage = '/img/public/laika-og.png';
 
 		// файл с настройками favicon и других иконок
 		$Favicon = 'app/views/favicons.php';

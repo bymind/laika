@@ -59,6 +59,7 @@ class Route
 		if ( file_exists($model_path) )
 		{
 			include $model_path;
+		} else {
 		}
 
 	}
@@ -132,6 +133,7 @@ class Route
 
 		// врубаем модель, если есть
 		self::loadModel($model_name);
+		self::Debug($controller_name, $action, $params);
 		// TODO: перенести подключение модели в контроллер
 
 		// та же херня с контроллером
@@ -177,6 +179,8 @@ class Route
 	*/
 	public function goMainPage()
 	{
+		self::loadModel('Model_Main');
+		
 		$controller_name = "Controller_main";
 		
 		self::loadController($controller_name);
@@ -184,6 +188,7 @@ class Route
 		
 		$action = "action_index";
 		$controller->$action();
+		
 	}
 
 

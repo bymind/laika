@@ -91,24 +91,6 @@ class Controller
 		return $newTimeStamp;
 	}
 
-	/**
-	* is_logged
-	* 
-	* проверяет, залогинен ли посетитель
-	* 
-	* @return bool
-	*/
-
-	function is_logged()
-	{
-		if (isset($_SESSION['id']))
-		{
-			return true;
-		} else
-		{
-			return false;
-		}
-	}
 
 	/**
 	* goLogin
