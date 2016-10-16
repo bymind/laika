@@ -131,6 +131,6 @@ footer .main_menu ul.menu_ui_units li a.instagram{
 	background-size: 20px 20px;
 }
 
-.main_menu ul.menu_text_units li a:hover {
+footer .main_menu ul.menu_text_units li a:hover {
 	border-bottom: 1px solid rgba(0,0,0,.4);
 }
