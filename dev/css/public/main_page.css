@@ -1,3 +1,6 @@
+
+/* header */
+
 header {
 	position: relative;
 	width: 100%;
@@ -58,33 +61,71 @@ header .slogan h1{
 	margin-bottom: 100px;
 }
 
-.header_preorder button.ghost {
-	border: 3px solid #fff;
+button {
 	border-radius: 4px;
 	display: block;
-	background: transparent;
 	text-transform: uppercase;
-	color: #fff;
 	font-size: 18px;
 	font-weight: 700;
 	line-height: 60px;
 	padding: 0 50px;
-	margin: 0 auto;
 	cursor: pointer;
+}
+
+button.ghost {
+	border: 3px solid #fff;
+	background: transparent;
+	color: #fff;
 	will-change: background;
 	transition: all .15s ease-in-out;
 }
 
-.header_preorder button.ghost:hover{
+button.ghost:hover{
 	background: rgba(255,255,255,.1);
 }
 
-.header_preorder .btn_undertext {
+button.buy {
+	width: 280px;
+	background-color: #45912e;
+	color: #fff;
+	border: 3px solid #45912e;
+}
+
+button.secondary-item-btn {
+	max-width: 150px;
+	background-color: #45912e;
+	color: #fff;
+	border: 3px solid #45912e;
+	font-size: 14px;
+	line-height: 30px;
+	padding: 0 10px;
+	margin: auto;
+}
+
+.header_preorder button.ghost {
+	margin: 0 auto;
+}
+
+.btn_undertext {
 	color: #fff;
 	font-size: 14px;
 	text-transform: uppercase;
 	margin-top: 20px;
+	text-align: center;
 }
+
+button.all {
+	width: 100%;
+	line-height: 100px;
+	font-size: 24px;
+	text-align: center;
+	color: #a8a8a8;
+	border: 1px solid #dedede;
+	background-color: #fafafa;
+	border-radius: 4px;
+}
+
+/* awesome blocks */
 
 .awesome-block {
 	width: 100%;
@@ -147,10 +188,12 @@ header .slogan h1{
 	font-size: 16px;
 }
 
+/* grass block */
+
 .grass-bg {
 	position: relative;
-	min-height: 500px;
-	background: url(/img/grass-bg.jpg) left center repeat-x;
+	max-height: 500px;
+	background: url(/img/grass-bg.jpg) left center;
 	overflow: hidden;
 }
 
@@ -160,8 +203,8 @@ header .slogan h1{
 	display: block;
 	width: 450px;
 	height: 804px;
-	bottom: 0;
-	right: calc(50% - 80px);
+	top: -250px;
+	right: calc(50% - 50px);
 	background: url(/img/guitar-for-preorder.png) center center no-repeat;
 	background-size: contain;
 	transform: rotate(40deg);
@@ -183,6 +226,8 @@ header .slogan h1{
 	z-index: 1;
 }
 
+/* preorder */
+
 .preorder-block {
 	color: #fff;
 	text-align: left;
@@ -193,6 +238,7 @@ header .slogan h1{
 	font-weight: 700;
 	text-transform: uppercase;
 	font-size: 32px;
+	line-height: 32px;
 }
 
 .preorder-title::after {
@@ -202,6 +248,8 @@ header .slogan h1{
 	background-color: #fff;
 	display: block;
 	position: relative;
+	top: 6px;
+	left: 2px;
 }
 
 .preorder-subtitle {
@@ -209,15 +257,218 @@ header .slogan h1{
 	font-weight: 700;
 	text-transform: uppercase;
 	font-size: 18px;
-	margin-bottom: 25px;
+	line-height: 18px;
+	margin-bottom: 20px;
 }
 
 .preorder-text {
 	position: relative;
 	font-weight: 400;
 	font-size: 16px;
-	line-height: 18px;
+	line-height: 24px;
 }
+
+.preorder-price {
+	display: block;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 32px;
+	line-height: 32px;
+	margin-bottom: 25px;
+}
+
+.preorder-btn {
+	display: inline-block;
+}
+
+/* shop */
+
+.shop-bg {
+	color: #222;
+}
+
+.shop-title {
+	display: block;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 32px;
+	line-height: 32px;
+	text-align: center;
+}
+
+.shop-title::after {
+	content: "";
+	width: 88px;
+	height: 1px;
+	background-color: #222;
+	display: block;
+	position: relative;
+	top: 6px;
+	margin: auto;
+}
+
+.guitar-360 {
+	height: 500px;
+	background: url(/img/guitar-360.jpg) center center no-repeat;
+	background-size: cover;
+}
+
+.guitar-media .media-row {
+	position: relative;
+	display: block;
+	height: 100px;
+	margin-bottom: 10px;
+	overflow: hidden;
+}
+
+.guitar-media .media-row:last-of-type{
+	margin-bottom: 0px;
+}
+
+.guitar-media .media-row .media-item {
+	text-align: center;
+	overflow: hidden;
+}
+
+.guitar-media .media-row.video {
+	margin-top: 15px;
+	height: 160px;
+}
+
+.guitar-media .media-row.audio {
+	margin-top: 15px;
+}
+
+.guitar-details-title {
+	display: block;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 24px;
+	line-height: 24px;
+	text-align: left;
+	margin-bottom: 20px;
+}
+
+.guitar-price {
+	display: block;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 24px;
+	line-height: 24px;
+	text-align: left;
+	color: #45912e;
+}
+
+.guitar-text {
+	position: relative;
+	width: 100%;
+	font-weight: 400;
+	color: #222;
+	font-size: 16px;
+	line-height: 24px;
+}
+
+.paypal-img {
+	position: relative;
+	width: 100%;
+	height: 64px;
+	background: url(/img/paypal1.png) center center no-repeat;
+	background-size: contain;
+}
+
+.secondary-item {
+	color: #fff;
+	position: relative;
+	min-height: 300px;
+	background-color: #999;
+}
+
+.item-title {
+	position: relative;
+	display: inline-block;
+	font-size: 18px;
+	line-height: 18px;
+	font-weight: 700;
+	text-transform: uppercase;
+	margin: 166px 20px 10px;
+}
+
+.item-text {
+	position: relative;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 20px;
+	margin: 0 20px 20px;
+}
+
+.item-price {
+	font-size: 30px;
+	line-height: 36px;
+	font-weight: 700;
+}
+
+.secondary-item .cover{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+20,0.3+50,0.7+100 */
+	background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0) 20%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.7) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 20%,rgba(0,0,0,0.3) 50%,rgba(0,0,0,0.7) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 20%,rgba(0,0,0,0.3) 50%,rgba(0,0,0,0.7) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000',endColorstr='#b3000000',GradientType=0 ); /* IE6-9 */
+
+}
+
+.sec-item1 {
+	background: url(/img/sec-item1.jpg) center center no-repeat;
+	background-size: cover;
+}
+
+.sec-item2 {
+	background: url(/img/sec-item2.jpg) center center no-repeat;
+	background-size: cover;
+}
+
+.sec-item3 {
+	background: url(/img/sec-item3.jpg) center center no-repeat;
+	background-size: cover;
+}
+
+.sec-item4 {
+	background: url(/img/sec-item4.jpg) center center no-repeat;
+	background-size: cover;
+}
+
+.video-title {
+	color: #fff;
+	display: block;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 32px;
+	line-height: 32px;
+	text-align: center;
+}
+
+.video-title::after {
+	content: "";
+	width: 88px;
+	height: 1px;
+	background-color: #fff;
+	display: block;
+	position: relative;
+	top: 6px;
+	margin: auto;
+}
+
+.video-item {
+	height: 200px;
+	width: 100%;
+	background: #111;
+}
+
+
 
 /* MEDIA GUERIES */
 
