@@ -86,18 +86,138 @@ header .slogan h1{
 	margin-top: 20px;
 }
 
-
 .awesome-block {
-	background-color: #028003;
 	width: 100%;
-	height: 200px;
+	min-height: 240px;
 	text-align: center;
 	font-size: 30px;
 	font-weight: 700;
-	color: #fff;
-	line-height: 200px;
+	color: #ababab;
 }
 
+.awesome-block .icon {
+	position: relative;
+	display: block;
+	margin: 0px auto 20px;
+	width: 108px;
+	height: 108px;
+	border: 2px solid #242424;
+	border-radius: 50%;
+}
+
+.awesome-block .icon.rubanok {
+	background: url(/img/rubanok.svg) center center no-repeat;
+	background-size: 86px 34px;
+}
+
+.awesome-block .icon.sound {
+	background: url(/img/sound.svg) center center no-repeat;
+	background-size: 70px 43px;
+}
+
+.awesome-block .icon.stars {
+	background: url(/img/stars.svg) center center no-repeat;
+	background-size: 80px 47px;
+}
+
+.awesome-title {
+	display: block;
+	font-weight: 700;
+	text-transform: uppercase;
+	color: #111;
+	text-align: center;
+	font-size: 18px;
+}
+
+.awesome-title::after {
+	content: "";
+	width: 88px;
+	height: 1px;
+	background-color: #45912e;
+	display: block;
+	position: relative;
+	margin: auto;
+}
+
+.awesome-text {
+	display: block;
+	font-weight: 300;
+	color: #111;
+	text-align: center;
+	font-size: 16px;
+}
+
+.grass-bg {
+	position: relative;
+	min-height: 500px;
+	background: url(/img/grass-bg.jpg) left center repeat-x;
+	overflow: hidden;
+}
+
+.guitar-preorder::before {
+	content: '';
+	position: absolute;
+	display: block;
+	width: 450px;
+	height: 804px;
+	bottom: 0;
+	right: calc(50% - 80px);
+	background: url(/img/guitar-for-preorder.png) center center no-repeat;
+	background-size: contain;
+	transform: rotate(40deg);
+}
+
+.grass-bg::after {
+	content: '';
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0px;
+	background: rgba(0, 0, 0, .2);
+}
+
+.grass-bg>div {
+	position: relative;
+	z-index: 1;
+}
+
+.preorder-block {
+	color: #fff;
+	text-align: left;
+}
+
+.preorder-title {
+	display: block;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 32px;
+}
+
+.preorder-title::after {
+	content: "";
+	width: 88px;
+	height: 1px;
+	background-color: #fff;
+	display: block;
+	position: relative;
+}
+
+.preorder-subtitle {
+	display: block;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 18px;
+	margin-bottom: 25px;
+}
+
+.preorder-text {
+	position: relative;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 18px;
+}
 
 /* MEDIA GUERIES */
 
