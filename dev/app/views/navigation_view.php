@@ -1,4 +1,4 @@
-<nav class="main_menu">
+<nav class="main_menu container">
 	<ul class="menu_text_units">
 		<li><a href="/#">About</a></li>
 		<li><a href="/#">News</a></li>
