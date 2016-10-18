@@ -144,6 +144,42 @@ footer .main_menu ul.menu_ui_units li:nth-child(2) {
 
 /* EXTENDS BOOTSTRAP */
 
+.mt-100{
+	margin-top: 100px;
+}
+
 .mb-100{
 	margin-bottom: 100px;
+}
+
+.mt-50{
+	margin-top: 50px;
+}
+
+.mb-50{
+	margin-bottom: 50px;
+}
+
+.mt-20{
+	margin-top: 20px;
+}
+
+.mb-20{
+	margin-bottom: 20px;
+}
+
+.pt-100{
+	padding-top: 100px;
+}
+
+.pb-100{
+	padding-bottom: 100px;
+}
+
+.pt-50{
+	padding-top: 50px;
+}
+
+.pb-50{
+	padding-bottom: 50px;
 }
