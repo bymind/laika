@@ -120,8 +120,15 @@ nav {
 
 /* FOOTER */
 
+.light-grey {
+	background: #eee;
+}
+
 footer nav {
 	color: rgba(0, 0, 0, .6);
+	line-height: 60px;
+	height: 60px;
+	margin: 20px 0;
 }
 
 footer .main_menu ul.menu_ui_units li a.facebook{
@@ -140,6 +147,52 @@ footer .main_menu ul.menu_text_units li a:hover {
 
 footer .main_menu ul.menu_ui_units li:nth-child(2) {
 	margin-right: 0px;
+}
+
+.copyright-line {
+	position: relative;
+	display: block;
+	margin: 10px 0 5px;
+	font-size: 12px;
+	font-weight: 300;
+	color: #666;
+	text-align: center;
+}
+
+.copyright {
+	opacity: 1;
+	display: inline-block;
+	margin-bottom: 10px;
+}
+
+.copyright-line .ref {
+	position: relative;
+	display: inline-block;
+}
+
+.ref a {
+	color: inherit;
+}
+
+.ref a:hover {
+	text-decoration: none;
+}
+
+.ref a.logo {
+	display: inline-block;
+	background: url(/img/logo-bymind.svg) center left no-repeat;
+	background-size: 60px;
+	width: 60px;
+	height: 34px;
+	color: #222;
+	opacity: .5;
+	transition: opacity .1s ease-in-out;
+	vertical-align: middle;
+	margin: -3px 0 0 3px;
+}
+
+.ref:hover a.logo {
+	opacity: 1;
 }
 
 /* EXTENDS BOOTSTRAP */
@@ -182,4 +235,25 @@ footer .main_menu ul.menu_ui_units li:nth-child(2) {
 
 .pb-50{
 	padding-bottom: 50px;
+}
+
+.p-0 {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.pr-0 {
+	padding-right: 0;
+}
+
+.pl-0 {
+	padding-left: 0;
+}
+
+.pr-20 {
+	padding-right: 20px;
+}
+
+.pl-20 {
+	padding-left: 20px;
 }
