@@ -1,4 +1,4 @@
-@import "../bootstrap/bootstrap.min.css";
+@import "/css/bootstrap/bootstrap.min.css";
 
 *{
 	padding: 0;
@@ -19,6 +19,7 @@ body {
 	background-color: #fff;
 	font-family: Open Sans, sans-serif;
 }
+
 
 /* NAVIGATION */
 
@@ -139,4 +140,10 @@ footer .main_menu ul.menu_text_units li a:hover {
 
 footer .main_menu ul.menu_ui_units li:nth-child(2) {
 	margin-right: 0px;
+}
+
+/* EXTENDS BOOTSTRAP */
+
+.mb-100{
+	margin-bottom: 100px;
 }
