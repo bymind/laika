@@ -34,7 +34,7 @@
 	<?php 
 		echo "<style>";
 		// include "css/public/bootstrap.min.css";
-		include "css/public/prod.css";
+		// include "css/public/prod.css";
 		echo "</style>";
 	 ?>
 </head>
@@ -64,8 +64,8 @@
 		include "css/owl-carousel/owl.transitions.css";
 		echo "</style>";
 	*/ ?>
-
-<!-- <script src="/js/jquery.min.js"></script> -->
+<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script src="/js/bootstrap/bootstrap.min.js"></script>
 
 </body>
 </html>
