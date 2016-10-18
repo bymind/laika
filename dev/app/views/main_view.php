@@ -1,5 +1,5 @@
 <div class="container-fluid">
-	<div class="row">
+	<div class="row mb-100">
 		<header>
 			<div class="hue"></div>
 			<div class="header_content">
@@ -28,9 +28,8 @@
 		// echo $pageDataView['text'],'<br>';
 	?>
 
-	<div class="row">
-		<div class="col-xs-18 col-xs-offset-1">
-			<div class="col-xs-6">
+	<div class="row mb-100">
+			<div class="col-xs-6 col-xs-offset-1">
 				<div class="awesome-block">1</div>
 			</div>
 			<div class="col-xs-6">
@@ -39,7 +38,6 @@
 			<div class="col-xs-6">
 				<div class="awesome-block">3</div>
 			</div>
-		</div>
 	</div>
 
 </div>
