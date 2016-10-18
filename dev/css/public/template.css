@@ -78,7 +78,7 @@ nav {
 	background-size: 20px 20px;
 }
 
-.main_menu ul.menu_ui_units li:nth-child(2n) {
+.main_menu ul.menu_ui_units li:nth-child(2) {
 	margin-right: 40px;
 }
 
@@ -135,4 +135,8 @@ footer .main_menu ul.menu_ui_units li a.instagram{
 
 footer .main_menu ul.menu_text_units li a:hover {
 	border-bottom: 1px solid rgba(0,0,0,.4);
+}
+
+footer .main_menu ul.menu_ui_units li:nth-child(2) {
+	margin-right: 0px;
 }
