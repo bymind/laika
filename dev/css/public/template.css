@@ -257,3 +257,11 @@ footer .main_menu ul.menu_ui_units li:nth-child(2) {
 .pl-20 {
 	padding-left: 20px;
 }
+
+.h200 {
+	height: 200px !important;
+}
+
+.h160 {
+	height: 160px !important;
+}
