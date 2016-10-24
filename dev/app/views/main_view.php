@@ -93,7 +93,7 @@
 						$ 180
 					</div>
 					<div class="preorder-btn">
-						<button class="ghost">
+						<button class="ghost" data-target="preorder">
 							Preorder now!
 						</button>
 						<div class="btn_undertext">
