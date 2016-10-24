@@ -468,7 +468,53 @@ button.all {
 	background: #111;
 }
 
+.video-plumb.video1 {
+	cursor: pointer;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background: url(/img/video1.jpg) center top no-repeat;
+}
 
+.video-plumb.video1:hover {
+	background: url(/img/video1.jpg) center bottom no-repeat;
+}
+
+.video-plumb.video2 {
+	cursor: pointer;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background: url(/img/video2.jpg) center top no-repeat;
+}
+
+.video-plumb.video2:hover {
+	background: url(/img/video2.jpg) center bottom no-repeat;
+}
+
+.video-plumb.video3 {
+	cursor: pointer;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background: url(/img/video3.jpg) center top no-repeat;
+}
+
+.video-plumb.video3:hover {
+	background: url(/img/video3.jpg) center bottom no-repeat;
+}
+
+.video-plumb.video4 {
+	cursor: pointer;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background: url(/img/video4.jpg) center top no-repeat;
+}
+
+.video-plumb.video4:hover {
+	background: url(/img/video4.jpg) center bottom no-repeat;
+}
 
 /* MEDIA GUERIES */
 
