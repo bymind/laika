@@ -1,10 +1,10 @@
 <footer>
 	<nav class="main_menu footer_menu container">
 		<ul class="menu_text_units">
-			<li><a href="/#">About</a></li>
-			<li><a href="/#">News</a></li>
-			<li><a href="/#">Shipping and payment</a></li>
-			<li><a href="/#">Contacts</a></li>
+			<li><a href="/about">About</a></li>
+			<li><a href="/news">News</a></li>
+			<li><a href="/shipping-and-payment">Shipping and payment</a></li>
+			<li><a href="/contacts">Contacts</a></li>
 		</ul>
 		
 		<ul class="menu_ui_units">
