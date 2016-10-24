@@ -19,6 +19,7 @@ class Controller_Main extends Controller
 					'title'=> $pageDataController['title'],
 					'style'=>'public/template.css',
 					'style_content'=>'public/main_page.css',
+					'scripts_content'=>'js/main_page.js',
 					'active_menu' => 'menu-item-1',
 					'pageId' => 'main',
 					'pageDataView' => $pageDataController
