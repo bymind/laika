@@ -152,7 +152,8 @@
 			<div class="media-row video">
 				<div class="col-xs-20 p-0">
 					<div class="media-item">
-						<iframe height="160" width="280" src="https://www.youtube.com/embed/PMrmKykJSog" frameborder="0" allowfullscreen></iframe>
+					<div class="video-plumb video1 h160" data-click-swap="youtube" data-video-id="PMrmKykJSog">
+					</div>
 					</div>
 				</div>
 			</div>
@@ -302,17 +303,20 @@
 			</span>
 			<div class="col-xs-6 col-xs-offset-1">
 				<div class="video-item">
-					<iframe height="100%" width="100%" src="https://www.youtube.com/embed/PMrmKykJSog" frameborder="0" allowfullscreen></iframe>
+					<div class="video-plumb video2" data-video-id="PMrmKykJSog">
+					</div>
 				</div>
 			</div>
 			<div class="col-xs-6">
 				<div class="video-item">
-					<iframe width="100%" height="100%" src="https://www.youtube.com/embed/VtaIxGSWkYE" frameborder="0" allowfullscreen></iframe>
+					<div class="video-plumb video3" data-video-id="VtaIxGSWkYE">
+					</div>
 				</div>
 			</div>
 			<div class="col-xs-6">
 				<div class="video-item">
-					<iframe width="100%" height="100%" src="https://www.youtube.com/embed/kXK2cdRoimQ" frameborder="0" allowfullscreen></iframe>
+					<div class="video-plumb video4" data-video-id="kXK2cdRoimQ">
+					</div>
 				</div>
 			</div>
 		</div>
