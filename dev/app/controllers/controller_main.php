@@ -25,7 +25,8 @@ class Controller_Main extends Controller
 					'pageDataView' => $pageDataController
 				),
 			'navigation_view.php',
-			'footer_view.php'
+			'footer_view.php',
+			'modal_preorder_view.php'
 			);
 		return 0;
 	}
