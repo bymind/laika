@@ -9,7 +9,7 @@
 					<h1>Crafted travel guitars</h1>
 				</div>
 				<div class="header_preorder">
-					<button class="ghost">
+					<button class="ghost" data-target="preorder">
 						Preorder guitar
 					</button>
 					<div class="btn_undertext">
