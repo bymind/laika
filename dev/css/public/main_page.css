@@ -520,42 +520,42 @@ button.all {
 
 @media screen and (max-width: 400px) {
 	header {
-		background: url(/img/hero-image-400.jpg) center center no-repeat !important;
+		background: url(/img/hero-image-400.jpg) center center no-repeat;
 		background-size: cover;
 	}
 }
 
 @media screen and (max-width: 800px) and (min-width: 400px) {
 	header {
-		background: url(/img/hero-image-800.jpg) center center no-repeat !important;
+		background: url(/img/hero-image-800.jpg) center center no-repeat;
 		background-size: cover;
 	}
 }
 
 @media screen and (max-width: 1000px) and (min-width: 800px) {
 	header {
-		background: url(/img/hero-image-1000.jpg) center center no-repeat !important;
+		background: url(/img/hero-image-1000.jpg) center center no-repeat;
 		background-size: cover;
 	}
 }
 
 @media screen and (max-width: 1500px) and (min-width: 1000px) {
 	header {
-		background: url(/img/hero-image-1500.jpg) center center no-repeat !important;
+		background: url(/img/hero-image-1500.jpg) center center no-repeat;
 		background-size: cover;
 	}
 }
 
 @media screen and (max-width: 2000px) and (min-width: 1500px) {
 	header {
-		background: url(/img/hero-image-2000.jpg) center center no-repeat !important;
+		background: url(/img/hero-image-2000.jpg) center center no-repeat;
 		background-size: cover;
 	}
 }
 
 @media screen and (max-width: 4000px) and (min-width: 2000px) {
 	header {
-		background: url(/img/hero-image-4000.jpg) center center no-repeat !important;
+		background: url(/img/hero-image-4000.jpg) center center no-repeat;
 		background-size: cover;
 	}
 }
