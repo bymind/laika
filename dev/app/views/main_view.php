@@ -1,19 +1,23 @@
 <div class="container-fluid">
-	<div class="row mb-100">
+	<div class="row mb-xs-40 mb-100">
 		<header>
 			<div class="hue"></div>
 			<div class="header_content">
-				<div class="logo_big">
-				</div>
-				<div class="slogan">
-					<h1>Crafted travel guitars</h1>
-				</div>
-				<div class="header_preorder">
-					<button class="ghost" data-target="preorder">
-						Preorder guitar
-					</button>
-					<div class="btn_undertext">
-						Worldwide shipping
+				<div class="col-xs-20">
+					<div class="col-xs-18 col-xs-offset-1 col-sm-16 col-sm-offset-2">
+						<div class="logo_big">
+						</div>
+						<div class="slogan">
+							<h1 class="mb-xs-40">Crafted travel guitars</h1>
+						</div>
+						<div class="header_preorder">
+							<button class="ghost" data-target="preorder">
+								Preorder guitar
+							</button>
+							<div class="btn_undertext">
+								Worldwide shipping
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -28,8 +32,8 @@
 		// echo $pageDataView['text'],'<br>';
 	?>
 
-	<div class="row mb-100">
-			<div class="col-xs-6 col-xs-offset-1">
+	<div class="row mb-xs-40 mb-100">
+			<div class="col-xs-18 col-xs-offset-1 col-sm-18 col-sm-offset-1 col-md-6 col-md-offset-1 mb-xs-40">
 				<div class="awesome-block">
 					<div class="icon rubanok">
 					</div>
@@ -41,7 +45,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-xs-6">
+			<div class="col-xs-18 col-xs-offset-1 col-sm-18 col-sm-offset-1 col-md-6 col-md-offset-0 mb-xs-40">
 				<div class="awesome-block">
 					<div class="icon sound">
 					</div>
@@ -53,7 +57,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-xs-6">
+			<div class="col-xs-18 col-xs-offset-1 col-sm-18 col-sm-offset-1 col-md-6 col-md-offset-0 mb-xs-40">
 				<div class="awesome-block">
 					<div class="icon stars">
 					</div>
@@ -73,11 +77,11 @@
 
 	<div class="row">
 		<div class="container">
-			<div class="col-xs-10">
+			<div class="hidden-xs col-sm-10">
 				<div class="preorder-block">
 				</div>
 			</div>
-			<div class="col-xs-10">
+			<div class="col-xs-20 col-sm-10">
 				<div class="preorder-block">
 					<span class="preorder-title mb-50">
 						Preorder
@@ -110,7 +114,7 @@
 <div class="container shop-bg mb-100">
 
 	<div class="row">
-		<div class="col-xs-20 mb-100">
+		<div class="col-xs-20 mb-xs-40 mb-100">
 			<span class="shop-title">
 				Shop
 			</span>
@@ -119,12 +123,12 @@
 
 	<div class="row mb-50">
 
-		<div class="col-xs-5">
+		<div class="hidden-xs hidden-sm col-md-5">
 			<div class="guitar-360">
 			</div>
 		</div>
 
-		<div class="col-xs-5 guitar-media">
+		<div class="hidden-xs hidden-sm col-md-5 guitar-media">
 			<div class="media-row">
 				<div class="col-xs-10 pl-0">
 					<div class="media-item">
@@ -166,7 +170,7 @@
 			</div>
 		</div>
 
-		<div class="col-xs-10">
+		<div class="col-xs-18 col-xs-offset-1 col-sm-18 col-sm-offset-1 col-md-10 col-md-offset-0">
 			<span class="guitar-details-title">
 				Travel guitar "Laika-First"
 			</span>
@@ -193,7 +197,7 @@
 
 	<div class="row mb-50">
 
-		<div class="col-xs-5">
+		<div class="col-xs-20 col-md-5">
 			<div class="secondary-item sec-item1">
 				<div class="cover"></div>
 				<div class="item-info">
@@ -216,7 +220,7 @@
 			</div>
 		</div>
 		
-		<div class="col-xs-5">
+		<div class="col-xs-20 col-md-5">
 			<div class="secondary-item  sec-item2">
 				<div class="cover"></div>
 				<div class="item-info">
@@ -238,7 +242,7 @@
 			</div>
 		</div>
 		
-		<div class="col-xs-5">
+		<div class="col-xs-20 col-md-5">
 			<div class="secondary-item sec-item3">
 				<div class="cover"></div>
 				<div class="item-info">
@@ -260,7 +264,7 @@
 			</div>
 		</div>
 		
-		<div class="col-xs-5">
+		<div class="col-xs-20 col-md-5">
 			<div class="secondary-item sec-item4">
 				<div class="cover"></div>
 				<div class="item-info">
