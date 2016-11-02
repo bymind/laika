@@ -111,7 +111,7 @@
 
 </div>
 
-<div class="container shop-bg mb-100">
+<div class="container shop-bg mb-100 mb-xs-40">
 
 	<div class="row">
 		<div class="col-xs-20 mb-xs-40 mb-100">
@@ -177,6 +177,49 @@
 			<span class="guitar-price mb-50">
 				$ 200
 			</span>
+
+			<div class="visible-xs visible-sm">
+				<div class="media-row clearfix">
+					<div class="col-xs-10 pl-0">
+						<div class="media-item">
+							<img src="/img/guitar-sec1.jpg" alt="">
+						</div>
+					</div>
+					<div class="col-xs-10 pr-0">
+						<div class="media-item">
+							<img src="/img/guitar-sec2.jpg" alt="">
+						</div>
+					</div>
+				</div>
+				<div class="media-row clearfix">
+					<div class="col-xs-10 pl-0">
+						<div class="media-item">
+							<img src="/img/guitar-sec3.jpg" alt="">
+						</div>
+					</div>
+					<div class="col-xs-10 pr-0">
+						<div class="media-item">
+							<img src="/img/guitar-sec4.jpg" alt="">
+						</div>
+					</div>
+				</div>
+				<div class="media-row clearfix video">
+					<div class="col-xs-20 p-0">
+						<div class="media-item">
+						<div class="video-plumb video1 h160" data-click-swap="youtube" data-video-id="PMrmKykJSog">
+						</div>
+						</div>
+					</div>
+				</div>
+				<div class="media-row clearfix audio">
+					<div class="col-xs-20 p-0">
+						<div class="media-item">
+							<iframe width="100%" height="100" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/223663988&amp;auto_play=false"></iframe>
+						</div>
+					</div>
+				</div>
+			</div>
+
 			<div class="guitar-text mb-50">
 				Our new model line is on the way.<br>
 				This is a first one of this line.<br>
@@ -219,7 +262,7 @@
 				</div>
 			</div>
 		</div>
-		
+
 		<div class="col-xs-20 col-md-5">
 			<div class="secondary-item  sec-item2">
 				<div class="cover"></div>
@@ -241,7 +284,7 @@
 				</div>
 			</div>
 		</div>
-		
+
 		<div class="col-xs-20 col-md-5">
 			<div class="secondary-item sec-item3">
 				<div class="cover"></div>
@@ -263,7 +306,7 @@
 				</div>
 			</div>
 		</div>
-		
+
 		<div class="col-xs-20 col-md-5">
 			<div class="secondary-item sec-item4">
 				<div class="cover"></div>
@@ -288,7 +331,7 @@
 
 	</div>
 
-	<div class="row">
+	<div class="row" style="display:none">
 		<div class="container">
 			<button class="all">
 				Show all
@@ -305,19 +348,19 @@
 			<span class="video-title mb-50">
 				Videos
 			</span>
-			<div class="col-xs-6 col-xs-offset-1">
+			<div class="col-xs-18 col-lg-6 col-xs-offset-1 col-xs-offset-1 mb-sm-20">
 				<div class="video-item">
 					<div class="video-plumb video2" data-video-id="PMrmKykJSog">
 					</div>
 				</div>
 			</div>
-			<div class="col-xs-6">
+			<div class="col-xs-18 col-xs-offset-1 col-lg-6 mb-sm-20">
 				<div class="video-item">
 					<div class="video-plumb video3" data-video-id="VtaIxGSWkYE">
 					</div>
 				</div>
 			</div>
-			<div class="col-xs-6">
+			<div class="col-xs-18 col-xs-offset-1 col-lg-6 mb-sm-20">
 				<div class="video-item">
 					<div class="video-plumb video4" data-video-id="kXK2cdRoimQ">
 					</div>
