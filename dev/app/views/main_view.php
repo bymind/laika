@@ -354,13 +354,13 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-xs-18 col-xs-offset-1 col-lg-6 mb-sm-20">
+			<div class="col-xs-18 col-xs-offset-1 col-lg-6 col-lg-offset-0 mb-sm-20">
 				<div class="video-item">
 					<div class="video-plumb video3" data-video-id="VtaIxGSWkYE">
 					</div>
 				</div>
 			</div>
-			<div class="col-xs-18 col-xs-offset-1 col-lg-6 mb-sm-20">
+			<div class="col-xs-18 col-xs-offset-1 col-lg-6 col-lg-offset-0 mb-sm-20">
 				<div class="video-item">
 					<div class="video-plumb video4" data-video-id="kXK2cdRoimQ">
 					</div>
