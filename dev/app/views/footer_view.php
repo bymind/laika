@@ -1,12 +1,12 @@
 <footer>
 	<nav class="main_menu footer_menu container">
-		<ul class="menu_text_units">
+		<ul class="menu_text_units hidden-xs hidden-sm ">
 			<li><a href="/about">About</a></li>
 			<li><a href="/news">News</a></li>
 			<li><a href="/shipping-and-payment">Shipping and payment</a></li>
 			<li><a href="/contacts">Contacts</a></li>
 		</ul>
-		
+
 		<ul class="menu_ui_units">
 			<li><a title="Facebook" href="https://www.fb.com/LaikaProGuitar" target="_blank" class="facebook active"></a></li>
 			<li><a title="Instagram" href="https://www.instagram.com/russiantravelguitar/" target="_blank" class="instagram active"></a></li>
@@ -28,7 +28,7 @@
 		</div>
 		<div class="row">
 			<div class="col-xs-20">
-				
+
 			</div>
 		</div>
 		</div>
