@@ -282,7 +282,7 @@ footer .main_menu ul.menu_ui_units li:nth-child(2) {
 		height: 40px;
 	}
 
-	button {
+	button.buy {
 		padding: 0 20px !important;
 		line-height: 40px !important;
 		font-size: 14px !important;
@@ -301,6 +301,37 @@ footer .main_menu ul.menu_ui_units li:nth-child(2) {
 
 /* SM */
 
+@media screen and (max-width: 768px) {
+	.media-row {
+		margin-bottom:10px
+	}
+	.media-item {
+		text-align: center;
+		overflow: hidden;
+	}
+
+	.grass-bg {
+		max-height: 900px !important;
+	}
+
+	.mb-sm-20 {
+		margin-bottom: 20px !important;
+	}
+
+	button.ghost {
+		padding: 0 20px;
+	}
+}
+
 /* MD */
+@media screen and (max-width: 1200px){
+
+	button.buy {
+		padding: 0px 30px;
+		width: auto !important;
+	}
+
+}
+
 
 /* LG */
