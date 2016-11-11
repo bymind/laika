@@ -10,7 +10,7 @@
 				</ul>
 			</div>
 			<div class="col-xs-20 col-md-8">
-				<div class="visible-xs visible-sm menu_icon_div">
+				<div class="col-xs-4 visible-xs visible-sm menu_icon_div pl-0">
 					<button class="menu_icon" data-target="mobile-menu">
 						<span class="menu_draw"></span>
 					</button>
