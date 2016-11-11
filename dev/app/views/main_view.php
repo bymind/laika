@@ -220,12 +220,15 @@
 				</div>
 			</div>
 
-			<div class="guitar-text mb-50">
+			<div class="guitar-text mb-50 mb-xs-20">
 				Our new model line is on the way.<br>
 				This is a first one of this line.<br>
 				<br>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 			</div>
+			<span class="visible-xs visible-sm guitar-price mb-20">
+				$ 200
+			</span>
 			<div class="col-xs-10 pl-0">
 				<button class="buy">
 					Buy now
@@ -240,7 +243,7 @@
 
 	<div class="row mb-50">
 
-		<div class="col-xs-20 col-md-5">
+		<div class="col-xs-20 col-md-10 col-lg-5">
 			<div class="secondary-item sec-item1">
 				<div class="cover"></div>
 				<div class="item-info">
@@ -263,7 +266,7 @@
 			</div>
 		</div>
 
-		<div class="col-xs-20 col-md-5">
+		<div class="col-xs-20 col-md-10 col-lg-5">
 			<div class="secondary-item  sec-item2">
 				<div class="cover"></div>
 				<div class="item-info">
@@ -285,7 +288,7 @@
 			</div>
 		</div>
 
-		<div class="col-xs-20 col-md-5">
+		<div class="col-xs-20 col-md-10 col-lg-5">
 			<div class="secondary-item sec-item3">
 				<div class="cover"></div>
 				<div class="item-info">
@@ -307,7 +310,7 @@
 			</div>
 		</div>
 
-		<div class="col-xs-20 col-md-5">
+		<div class="col-xs-20 col-md-10 col-lg-5">
 			<div class="secondary-item sec-item4">
 				<div class="cover"></div>
 				<div class="item-info">
@@ -348,19 +351,19 @@
 			<span class="video-title mb-50">
 				Videos
 			</span>
-			<div class="col-xs-18 col-lg-6 col-xs-offset-1 col-xs-offset-1 mb-sm-20">
+			<div class="col-xs-18 col-md-6 col-xs-offset-1 col-xs-offset-1 mb-sm-20">
 				<div class="video-item">
 					<div class="video-plumb video2" data-video-id="PMrmKykJSog">
 					</div>
 				</div>
 			</div>
-			<div class="col-xs-18 col-xs-offset-1 col-lg-6 col-lg-offset-0 mb-sm-20">
+			<div class="col-xs-18 col-xs-offset-1 col-md-6 col-md-offset-0 col-lg-offset-0 mb-sm-20">
 				<div class="video-item">
 					<div class="video-plumb video3" data-video-id="VtaIxGSWkYE">
 					</div>
 				</div>
 			</div>
-			<div class="col-xs-18 col-xs-offset-1 col-lg-6 col-lg-offset-0 mb-sm-20">
+			<div class="col-xs-18 col-xs-offset-1 col-md-6 col-md-offset-0 col-lg-offset-0 mb-sm-20">
 				<div class="video-item">
 					<div class="video-plumb video4" data-video-id="kXK2cdRoimQ">
 					</div>
