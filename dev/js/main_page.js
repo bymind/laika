@@ -66,6 +66,10 @@ function BtnClickHandler(obj) {
 			ModalPreorderGo(obj);
 			break;
 
+		case 'mobile-menu':
+			ToggleMenu(obj);
+			break;
+
 		default:
 			break;
 	}
@@ -88,5 +92,22 @@ function ModalPreorderGo(obj) {
 	mObj.modal();
 
 	console.log('Hello, modal!');
+
+}
+
+
+/*
+* ToggleMenu(obj)
+* Mobile menu actions
+* @param obj
+* @return 0
+*/
+function ToggleMenu(obj) {
+
+	var spanIcon = obj.find('span.menu_draw');
+	obj.toggleClass('active');
+	$('.mobile_div_ul').toggleClass('disabled');
+
+	console.log('Menu toggled!');
 
 }
